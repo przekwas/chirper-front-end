@@ -4,8 +4,6 @@ import '../App.css';
 import AddChirp from './AddChirp';
 import Chirp from './Chirp';
 import Header from './Header';
-import headshot from '../headshot.jpg';
-
 
 class App extends Component {
   render() {
@@ -14,7 +12,7 @@ class App extends Component {
         <Header />
         <AddChirp />
         <Chirp
-          author={ { name: `Luke`, avatarSrc: {headshot} } }
+          author={ { name: `Luke`, avatarSrc: `../headshot.jpg` } }
           text="FIRST"
           time="22/1/2018 3:41PM"
         />

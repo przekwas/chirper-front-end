@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.gif';
 import '../App.css';
 import AddChirp from './AddChirp';
+import Chirp from './Chirp';
 
 class App extends Component {
   render() {
@@ -13,6 +14,9 @@ class App extends Component {
         </header>
 
         <AddChirp />
+        <Chirp text="FIRST" />
+        <Chirp text="Omg that meme is so old.  Plz die in a fire." />
+        <Chirp text="NO U" />
 
       </div>
     );

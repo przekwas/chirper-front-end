@@ -8,7 +8,7 @@ class ChirpList extends React.Component {
     }
 
     createChirps(item) {
-        return <li key={item.key} className="list-group-item" style={{ border: `none` }}><Chirp text={item.text} name='Luke' time={item.key} /></li>
+        return <li key={item.key} className="list-group-item" style={{ border: `none`, backgroundColor: `#DCDCDC` }}><Chirp text={item.text} name='Luke' time={item.key} /></li>
     }
 
     render() {

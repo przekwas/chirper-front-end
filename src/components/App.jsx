@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
-import AddChirpForm from './AddChirp';
+import NavBar from './Navbar';
 import Header from './Header';
+import AddChirpForm from './AddChirp';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
         <Header />
         <AddChirpForm />
       </div>

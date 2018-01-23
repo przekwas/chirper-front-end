@@ -35,13 +35,13 @@ class AddChirpForm extends React.Component {
         return (
             <div className="wrapper">
 
-                <div className="container border rounded mt-2">
+                <div className="container border rounded mt-2" style={{ backgroundColor: `#FFFFFF` }}>
                     <div className="row">
                         <div className="col">
                             <form onSubmit={this.addChirps}>
                                 <div className="form-group p-1 m-1">
                                     <label htmlFor="chirp-text">What're your thoughts today?</label>
-                                    <input type="text" className="form-control p-1 m-1" id="chirp-text" ref={(a) => this._inputElement = a} placeholder="Type your Chirp here!" />
+                                    <input type="text" className="form-control p-1 m-1 bg-light" id="chirp-text" ref={(a) => this._inputElement = a} placeholder="Type your Chirp here!" />
                                     <button type="submit" className="btn btn-primary w-100 p-1 m-1">Chirp it!</button>
                                     <small id="branding" className="form-text text-muted">Be heard.</small>
                                 </div>

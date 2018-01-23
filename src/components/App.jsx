@@ -15,3 +15,6 @@ class App extends Component {
 }
 
 export default App;
+
+let d = new Date(Date.now());
+console.log(d);

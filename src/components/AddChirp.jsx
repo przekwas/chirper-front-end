@@ -1,41 +1,58 @@
 import React from 'react';
+import ChirpList from './ChirpList';
 
-class AddChirp extends React.Component {
-    constructor() {
-        super();
-        this.state = { value: '' };
+class AddChirpForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            chirps: []
+        }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.addChirps = this.addChirps.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
+    addChirps(event) {
+        let chirpArray = this.state.chirps;
 
-    handleSubmit(event) {
+        if (this._inputElement.value !== "") {
+            chirpArray.unshift({
+                text: this._inputElement.value,
+                key: Date.now()
+            });
+
+            this.setState({
+                chirps: chirpArray
+            });
+
+            this._inputElement.value = "";
+        }
+
+        console.log(chirpArray);
         event.preventDefault();
-        console.log(this.state.value);
     }
 
     render() {
         return (
-            <div className="container border rounded mt-2">
-                <div className="row">
-                    <div className="col">
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group p-1 m-1">
-                                <label htmlFor="chirp-text">What're your thoughts today?</label>
-                                <input type="text" className="form-control p-1 m-1" id="chirp-text" value={this.state.value} onChange={this.handleChange} placeholder="Type your Chirp here!" />
-                                <button type="submit" className="btn btn-primary w-100 p-1 m-1">Chirp it!</button>
-                                <small id="branding" className="form-text text-muted">Be heard.</small>
-                            </div>
-                        </form>
+            <div className="wrapper">
+
+                <div className="container border rounded mt-2">
+                    <div className="row">
+                        <div className="col">
+                            <form onSubmit={this.addChirps}>
+                                <div className="form-group p-1 m-1">
+                                    <label htmlFor="chirp-text">What're your thoughts today?</label>
+                                    <input type="text" className="form-control p-1 m-1" id="chirp-text" ref={(a) => this._inputElement = a} placeholder="Type your Chirp here!" />
+                                    <button type="submit" className="btn btn-primary w-100 p-1 m-1">Chirp it!</button>
+                                    <small id="branding" className="form-text text-muted">Be heard.</small>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <ChirpList entries={this.state.chirps} />
             </div>
         )
     }
 }
 
-export default AddChirp;
+export default AddChirpForm;

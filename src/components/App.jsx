@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
 import '../App.css';
 import AddChirp from './AddChirp';
 import Chirp from './Chirp';
@@ -12,18 +11,20 @@ class App extends Component {
         <Header />
         <AddChirp />
         <Chirp
-          author={ { name: `Luke`, avatarSrc: `../headshot.jpg` } }
+          author={{ name: `Luke`, avatarSrc: `../headshot.jpg` }}
           text="FIRST"
-          time="22/1/2018 3:41PM"
+          time="22/1/2018 3:29PM"
         />
-        {/* <Chirp
+        <Chirp
+          author={{ name: `Luke`, avatarSrc: `../yze.jpg` }}
           text="Omg that meme is so old.  Plz die in a fire."
           time="22/1/2018 3:45PM"
         />
         <Chirp
+          author={{ name: `Luke`, avatarSrc: `../headshot.jpg` }}
           text="NO U"
           time="22/1/2018 3:52PM"
-        /> */}
+        />
       </div>
     );
   }

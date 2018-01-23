@@ -8,7 +8,7 @@ class ChirpList extends React.Component {
     }
 
     createChirps(item) {
-        return <li key={item.key} className="list-group-item" style={{ border: `none` }}><Chirp text={item.text} /></li>
+        return <li key={item.key} className="list-group-item" style={{ border: `none` }}><Chirp text={item.text} name='Luke' time={item.key} /></li>
     }
 
     render() {
@@ -27,10 +27,3 @@ class ChirpList extends React.Component {
 }
 
 export default ChirpList;
-
-// {
-//     this.props.data.map((element) => {
-//         return <li key={element.id} className="list-group-item" style={{ border: `none` }}><Chirp text={element.text} /></li>
-
-//     })
-// }

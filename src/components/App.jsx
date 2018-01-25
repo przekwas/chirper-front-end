@@ -4,7 +4,7 @@ import NavBar from './Navbar';
 import Header from './Header';
 import AddChirpForm from './AddChirp';
 
-
+//Constructs the order of components to render on the page
 class App extends Component {
   render() {
     return (

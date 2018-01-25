@@ -1,6 +1,7 @@
 import React from 'react';
 import Chirp from './Chirp';
 
+//Component that maps out the array of chirps and adds them as list items to an unordered list.  Key ids are current dates
 class ChirpList extends React.Component {
     constructor(props) {
         super(props);
@@ -17,11 +18,11 @@ class ChirpList extends React.Component {
         let listItems = chirpEntries.map(this.createChirps);
 
         return (
-            <div className="wrapper">
+            <React.Fragment>
                 <ul className="list-group">
                     {listItems}
                 </ul>
-            </div>
+            </React.Fragment>
         )
     }
 }

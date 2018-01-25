@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from './Avatar';
 import FormatTime from './FormatTime';
 
+//Component to construct a chirp as a bootstrap card
 const Chirp = (props) => {
     return (
         <div className="container">
@@ -9,7 +10,7 @@ const Chirp = (props) => {
                 <div className="card w-100">
                     <div className="card-header">
                         <div className="media">
-                            <Avatar user={props.author} />
+                            <Avatar user={props.name} />
                             <div className="media-body">
                                 <h5 className="d-inline font-weight-bold">{props.name}</h5>
                                 <h6 className="text-muted">Chirpped:</h6>

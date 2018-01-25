@@ -1,6 +1,7 @@
 import React from 'react';
 import ChirpList from './ChirpList';
 
+//component to add the form to add chirps
 class AddChirpForm extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class AddChirpForm extends React.Component {
     addChirps(event) {
         let chirpArray = this.state.chirps;
 
+        //prevents users from spamming the page with blank chirps
         if (this._inputElement.value !== "") {
             chirpArray.unshift({
                 text: this._inputElement.value,
@@ -27,14 +29,13 @@ class AddChirpForm extends React.Component {
             this._inputElement.value = "";
         }
 
-        console.log(chirpArray);
+        //prevents the submit form from refreshing the page
         event.preventDefault();
     }
 
     render() {
         return (
-            <div className="wrapper">
-
+            <React.Fragment>
                 <div className="container border rounded mt-2" style={{ backgroundColor: `#FFFFFF` }}>
                     <div className="row">
                         <div className="col">
@@ -50,7 +51,7 @@ class AddChirpForm extends React.Component {
                     </div>
                 </div>
                 <ChirpList entries={this.state.chirps} />
-            </div>
+            </React.Fragment>
         )
     }
 }
